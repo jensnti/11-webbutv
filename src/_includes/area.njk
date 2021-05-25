@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+
+<h1>Area</h1>
+
+{{ tags }}
+
+{% highlight "json" %}
+{% set navPages = collections.all | eleventyNavigation("webbutveckling") %}
+{{ navPages | dump | safe }}
+{% endhighlight %}
+
+{{ content | safe }}

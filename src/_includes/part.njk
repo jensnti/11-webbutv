@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+
+<h1>Part</h1>
+
+{{ tags }}
+
+{% highlight "js" %}
+{% set navPages = collections.all | eleventyNavigation %}
+{{ navPages | dump | safe }}
+{% endhighlight %}
+
+{{ content | safe }}
