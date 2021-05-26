@@ -9,28 +9,40 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-    eleventyConfig.addWatchTarget("./src/sass/");
+    eleventyConfig.addWatchTarget('./src/sass/');
 
-    eleventyConfig.addPassthroughCopy("./src/css");
+    eleventyConfig.addPassthroughCopy('./src/css');
 
-    eleventyConfig.addPairedShortcode("intro", function(content) {
+    eleventyConfig.addPairedShortcode('intro', function (content) {
         return `<section class="col-md-3 intro">${content}</section>`;
     });
 
-    eleventyConfig.addPairedShortcode("instruktioner", function(content) {
+    eleventyConfig.addPairedShortcode('instruktioner', function (content) {
         return `<section class="col-md-6 my-4 my-md-0 instructions">${content}</section>`;
     });
 
-    eleventyConfig.addPairedShortcode("uppgifter", function(content) {
+    eleventyConfig.addPairedShortcode('uppgifter', function (content) {
         return `<section class="col-md-3 assignments">${content}</section>`;
     });
 
-    eleventyConfig.addFilter('slug', (str) => {
-        return slugify(string, {
+    // Get the first `n` elements of a collection.
+    eleventyConfig.addFilter('head', (array, n) => {
+        if (n < 0) {
+            return array.slice(n);
+        }
+
+        return array.slice(0, n);
+    });
+
+    eleventyConfig.addFilter('splice', (path) => {
+        return path.split('/').slice(0, -1).join('/');
+    })
+
+    eleventyConfig.addFilter('slugUrl', (str) => {
+        return slugify(str, {
             lower: true,
-            strict: true,
-            replacement: "-",
-            remove: /[*+~·,()'"`´%!?¿:@\/]/g,
+            strict: false,
+            remove: /["]/g,
           });
     });
 
@@ -39,9 +51,9 @@ module.exports = function (eleventyConfig) {
         html: true
     }).use(markdownItAnchor, {
         permalink: true,
-        permalinkClass: 'tdbc-anchor',
+        permalinkClass: 'anchor',
         permalinkSymbol: '#',
-        permalinkSpace: false,
+        permalinkSpace: true,
         level: [1, 2, 3],
         slugify: (s) =>
             s
