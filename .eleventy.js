@@ -27,7 +27,11 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('splice', (path) => {
         return path.split('/').slice(0, -1).join('/');
-    })
+    });
+
+    eleventyConfig.addFilter('capitalize ', (str) => {
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    });
 
     eleventyConfig.addFilter('slugUrl', (str) => {
         return slugify(str, {

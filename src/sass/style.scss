@@ -1,5 +1,19 @@
+@import "_vars";
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; // allow us to do the line break for collapsing content
+    align-items: center;
+    justify-content: space-between; // space out brand from logo
+    padding-top: $navbar-padding-y;
+    padding-right: $navbar-padding-x; // default: null
+    padding-bottom: $navbar-padding-y;
+    padding-left: $navbar-padding-x; // default: null
 }
 
 .instructions {
@@ -44,35 +58,44 @@ body {
     }
 }
 
-.text-capfirst {
-    &:first-letter {
-        text-transform: uppercase;
-    }
-}
-
 .anchor {
     text-decoration: none;
 }
 
-.home-nav-top {
-    list-style: none;
-    padding: 2rem 0;
-}
-
-.home-nav-sub ul {
-    list-style: none;
-    padding: 0 1rem;
-    .home-nav-item {
-        padding: 0 1rem;
-        width: 100%;
-        background-color: green;
+.accordion-button {
+    &:hover {
+        color: #0a58ca;
+    }
+    &:focus {
+        z-index: 3;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+    }
+    &:not(.collapsed) {
+        color: inherit;
+        background-color: inherit;
+    }
+    &::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-lg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z'/%3E%3C/svg%3E");
+    }
+    &:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-lg' viewBox='0 0 16 16'%3E%3Cpath d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z'/%3E%3C/svg%3E");
     }
 }
 
-.home-nav-sub li {
-    .home-nav-item {
-        padding: 0 1rem;
-        width: 100%;
-        background-color: red;
-    }
+.accordion-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
 }
