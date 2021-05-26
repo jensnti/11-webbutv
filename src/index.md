@@ -1,10 +1,12 @@
 ---
 title: Webbutveckling
-layout: "base.njk"
+layout: "home.njk"
 templateOverride: njk, md
 eleventyNavigation:
     key: webbutveckling
 ---
+
+# Ämne
 
 Introduktion till ämnet.
 

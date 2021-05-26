@@ -5,13 +5,25 @@ const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.setDataDeepMerge(true);
+    // eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     eleventyConfig.addWatchTarget("./src/sass/");
 
     eleventyConfig.addPassthroughCopy("./src/css");
+
+    eleventyConfig.addPairedShortcode("intro", function(content) {
+        return `<section class="col-md-3 intro">${content}</section>`;
+    });
+
+    eleventyConfig.addPairedShortcode("instruktioner", function(content) {
+        return `<section class="col-md-6 my-4 my-md-0 instructions">${content}</section>`;
+    });
+
+    eleventyConfig.addPairedShortcode("uppgifter", function(content) {
+        return `<section class="col-md-3 assignments">${content}</section>`;
+    });
 
     eleventyConfig.addFilter('slug', (str) => {
         return slugify(string, {

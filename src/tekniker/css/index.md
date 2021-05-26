@@ -1,11 +1,11 @@
 ---
-title: HTML
+title: CSS
 layout: "area.njk"
-tags: ["html", "område"]
+tags: ["css", "område"]
 eleventyNavigation:
-    key: html
+    key: css
     parent: tekniker
-    order: 0
+    order: 1
 ---
 
 Områdesintro JS

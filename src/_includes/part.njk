@@ -1,14 +1,10 @@
 ---
 layout: base.njk
 ---
+{% include "breadcrumbs.njk" %}
 
-<h1>Part</h1>
+<h1>{{ title }}</h1>
 
-{{ tags }}
-
-{% highlight "js" %}
-{% set navPages = collections.all | eleventyNavigation %}
-{{ navPages | dump | safe }}
-{% endhighlight %}
-
+<div class="row">
 {{ content | safe }}
+</div>

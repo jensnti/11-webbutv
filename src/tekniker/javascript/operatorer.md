@@ -1,6 +1,6 @@
 ---
 title: Operatorer
-tags: ["operatorer"]
+tags: ["operatorer", "del"]
 layout: part.njk
 eleventyNavigation:
     key: operatorer

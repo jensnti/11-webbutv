@@ -1,6 +1,7 @@
 ---
 title: Praxis
 layout: "theme.njk"
+tags: ["tema", "praxis"]
 templateOverride: njk, md
 eleventyNavigation:
     key: praxis

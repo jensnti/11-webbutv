@@ -1,7 +1,7 @@
 ---
 title: Språket
 layout: part.njk
-tags: ["språket"]
+tags: ["språket", "del"]
 eleventyNavigation:
     key: språket
     parent: html
