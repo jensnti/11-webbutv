@@ -10,6 +10,7 @@
         <title>{{ title }}</title>
     </head>
     <body>
+        {% include "breadcrumbs.njk" %}
         <main class="container">
             {{ content | safe }}
         </main>

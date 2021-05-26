@@ -1,9 +1,6 @@
 ---
 layout: base.njk
 ---
-
-{% include "breadcrumbs.njk" %}
-
 {% set currentPage %}{{ page.fileSlug }}{% endset %}
 {% set navPages = collections.all | eleventyNavigation(currentPage) %}
 {% macro renderNavListItem(entry) -%}
