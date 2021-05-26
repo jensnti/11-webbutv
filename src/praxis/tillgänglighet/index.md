@@ -3,8 +3,8 @@ title: Tillgänglighet
 layout: "area.njk"
 tags: ["tillgänglighet", "område"]
 eleventyNavigation:
-    key: Tillgänglighet
-    parent: Praxis
+    key: tillgänglighet
+    parent: praxis
     order: 0
 ---
 

@@ -3,7 +3,7 @@ title: Webbutveckling
 layout: "home.njk"
 templateOverride: njk, md
 eleventyNavigation:
-    key: Webbutveckling
+    key: webbutveckling
 ---
 
 # Ämne

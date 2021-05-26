@@ -1,9 +1,12 @@
 ---
 title: Tekniker
+layout: "theme.njk"
+tags: ["tema", "tekniker"]
+permalink: "{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}.html"
 templateOverride: njk, md
 eleventyNavigation:
-    key: Tekniker
-    parent: Webbutveckling
+    key: tekniker
+    parent: webbutveckling
     order: 0
 ---
 

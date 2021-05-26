@@ -3,8 +3,8 @@ title: Element
 layout: part.njk
 tags: ["element", "del"]
 eleventyNavigation:
-    key: Element
-    parent: HTML
+    key: element
+    parent: html
     order: 1
 ---
 

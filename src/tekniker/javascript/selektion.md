@@ -3,8 +3,8 @@ title: Selektion
 tags: ["selektion", "del"]
 layout: part.njk
 eleventyNavigation:
-    key: Selektion
-    parent: Javascript
+    key: selektion
+    parent: javascript
     order: 3
 ---
 ## Introduktion

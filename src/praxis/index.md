@@ -2,10 +2,11 @@
 title: Praxis
 layout: "theme.njk"
 tags: ["tema", "praxis"]
+permalink: "{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}.html"
 templateOverride: njk, md
 eleventyNavigation:
-    key: Praxis
-    parent: Webbutveckling
+    key: praxis
+    parent: webbutveckling
     order: 1
 ---
 

@@ -4,8 +4,8 @@ tags: ["variabler", "del"]
 layout: part.njk
 templateOverride: njk, md
 eleventyNavigation:
-    key: Variabler
-    parent: Javascript
+    key: variabler
+    parent: javascript
     order: 0
 ---
 {% intro %}

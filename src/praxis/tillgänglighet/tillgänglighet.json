@@ -1,0 +1,4 @@
+{
+    "tags": "tillgänglighet",
+    "permalink": "{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}.html"
+}

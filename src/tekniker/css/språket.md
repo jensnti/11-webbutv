@@ -3,8 +3,8 @@ title: Vad är CSS?
 tags: ["css", "del"]
 layout: part.njk
 eleventyNavigation:
-    key: Vad är CSS
-    parent: CSS
+    key: vad är css
+    parent: css
     order: 0
 ---
 ## Introduktion
