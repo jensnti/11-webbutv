@@ -1,20 +1,31 @@
 ---
 layout: base.njk
 ---
-<h1>{{ title }}</h1>
+<header>
+    <h1>{{ title }}</h1>
+</header>
+<nav class="home-nav">
+    {% set navPages = collections.all | eleventyNavigation(title.toLowerCase()) %}
+    {% macro renderNavListItem(entry, index) %}
+        <li class="home-nav-item">
+            <h2><a href="{{ entry.url | url }}">{{ entry.title }}</a></h2>
+        </li>
+        {% if entry.children.length %}
+            <li class="home-nav-sub">
+                <ul class="home-nav-sub">
+                    {% for child in entry.children %}{{ renderNavListItem(child, loop.index) }}{% endfor %}
+                </ul>
+            </li>
+        {% endif %}
+    {% endmacro %}
 
-{% set navPages = collections.all | eleventyNavigation %}
-{% macro renderNavListItem(entry) -%}
-<li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-<a href="{{ entry.url | url }}">{{ entry.title }}</a>
-{%- if entry.children.length -%}
-<ul>
-    {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
-</ul>
-{%- endif -%}
-</li>
-{%- endmacro %}
+    <ul class="home-nav-top">
+        {% for entry in navPages %}{{ renderNavListItem(entry, loop.index) }}{% endfor %}
+    </ul>
+</nav>
+{# {% set navPages = collections.all | eleventyNavigation %}
+{{ navPages.shift() | dump | safe }} #}
 
-<ul>
-{%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-</ul>
+{# {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }} #}
+
+{# {{ collections.all | eleventyNavigation(title.toLowerCase()) | eleventyNavigationToHtml({ showExcerpt: true }) | safe }} #}

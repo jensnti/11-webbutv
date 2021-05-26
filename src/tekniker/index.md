@@ -8,6 +8,7 @@ eleventyNavigation:
     key: tekniker
     parent: webbutveckling
     order: 0
+    excerpt: Tema tekniker
 ---
 
 <h2>Tekniker</h2>

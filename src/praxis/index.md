@@ -8,6 +8,7 @@ eleventyNavigation:
     key: praxis
     parent: webbutveckling
     order: 1
+    excerpt: Tema praxis
 ---
 
 <h2>Praxis</h2>
