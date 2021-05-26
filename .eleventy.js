@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addWatchTarget('./src/sass/');
 
-    eleventyConfig.addPassthroughCopy('./src/css');
+    // eleventyConfig.addPassthroughCopy('./src/css');
 
     eleventyConfig.addPairedShortcode('intro', function (content) {
         return `<section class="col-md-3 intro">${content}</section>`;
@@ -23,15 +23,6 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPairedShortcode('uppgifter', function (content) {
         return `<section class="col-md-3 assignments">${content}</section>`;
-    });
-
-    // Get the first `n` elements of a collection.
-    eleventyConfig.addFilter('head', (array, n) => {
-        if (n < 0) {
-            return array.slice(n);
-        }
-
-        return array.slice(0, n);
     });
 
     eleventyConfig.addFilter('splice', (path) => {
