@@ -3,7 +3,7 @@ title: Validering
 tags: ["validering", "del"]
 layout: part.njk
 eleventyNavigation:
-    key: validering
-    parent: kod
+    key: Validering
+    parent: Kod
     order: 1
 ---

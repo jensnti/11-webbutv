@@ -4,8 +4,8 @@ tags: ["datatyper", "del"]
 layout: part.njk
 templateOverride: njk, md
 eleventyNavigation:
-    key: datatyper
-    parent: javascript
+    key: Datatyper
+    parent: Javascript
     order: 1
 ---
 {% intro %}

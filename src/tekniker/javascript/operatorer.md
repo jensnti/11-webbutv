@@ -3,8 +3,8 @@ title: Operatorer
 tags: ["operatorer", "del"]
 layout: part.njk
 eleventyNavigation:
-    key: operatorer
-    parent: javascript
+    key: Operatorer
+    parent: Javascript
     order: 2
 ---
 ## Introduktion

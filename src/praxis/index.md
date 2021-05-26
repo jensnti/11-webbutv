@@ -4,8 +4,8 @@ layout: "theme.njk"
 tags: ["tema", "praxis"]
 templateOverride: njk, md
 eleventyNavigation:
-    key: praxis
-    parent: webbutveckling
+    key: Praxis
+    parent: Webbutveckling
     order: 1
 ---
 

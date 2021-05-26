@@ -4,8 +4,8 @@ layout: "area.njk"
 tags: ["javascript", "område"]
 templateOverride: njk, md
 eleventyNavigation:
-    key: javascript
-    parent: tekniker
+    key: Javascript
+    parent: Tekniker
     order: 2
 ---
 

@@ -3,8 +3,8 @@ title: CSS
 layout: "area.njk"
 tags: ["css", "område"]
 eleventyNavigation:
-    key: css
-    parent: tekniker
+    key: CSS
+    parent: Tekniker
     order: 1
 ---
 

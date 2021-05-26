@@ -3,8 +3,8 @@ title: Design för alla
 tags: ["design", "del"]
 layout: part.njk
 eleventyNavigation:
-    key: "design för alla"
-    parent: tillgänglighet
+    key: Design för alla
+    parent: Tillgänglighet
     order: 1
 ---
 

@@ -3,8 +3,8 @@ title: Kod
 layout: "area.njk"
 tags: ["kod", "område"]
 eleventyNavigation:
-    key: kod
-    parent: praxis
+    key: Kod
+    parent: Praxis
     order: 1
 ---
 

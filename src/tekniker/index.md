@@ -2,8 +2,8 @@
 title: Tekniker
 templateOverride: njk, md
 eleventyNavigation:
-    key: tekniker
-    parent: webbutveckling
+    key: Tekniker
+    parent: Webbutveckling
     order: 0
 ---
 

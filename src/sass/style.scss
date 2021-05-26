@@ -43,3 +43,9 @@ body {
         }
     }
 }
+
+.text-capfirst {
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}

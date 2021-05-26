@@ -3,8 +3,8 @@ title: Språket
 layout: part.njk
 tags: ["språket", "del"]
 eleventyNavigation:
-    key: språket
-    parent: html
+    key: Språket
+    parent: HTML
     order: 0
 ---
 
