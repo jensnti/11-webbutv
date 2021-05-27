@@ -1,7 +1,7 @@
 ---
 title: Tekniker
 layout: "theme.njk"
-tags: ["tema", "tekniker"]
+category: tema
 permalink: "{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}.html"
 templateOverride: njk, md
 eleventyNavigation:
@@ -10,9 +10,4 @@ eleventyNavigation:
     order: 0
     excerpt: Tema tekniker
 ---
-
-<h2>Tekniker</h2>
-
-Introduktion till ämnet.
-
-Lista över teman, klicka på för områden.
+<p class="lead">Temat tekniker innehåller följande områden.</p>

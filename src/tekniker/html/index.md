@@ -1,7 +1,7 @@
 ---
 title: HTML
 layout: "area.njk"
-tags: ["html", "område"]
+category: område
 eleventyNavigation:
     key: html
     parent: tekniker

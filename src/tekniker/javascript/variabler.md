@@ -1,6 +1,6 @@
 ---
 title: Variabler
-tags: ["variabler", "del"]
+category: del
 layout: part.njk
 templateOverride: njk, md
 eleventyNavigation:

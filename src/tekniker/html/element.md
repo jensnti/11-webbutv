@@ -1,7 +1,7 @@
 ---
 title: Element
 layout: part.njk
-tags: ["element", "del"]
+category: del
 eleventyNavigation:
     key: element
     parent: html

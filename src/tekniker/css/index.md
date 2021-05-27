@@ -1,7 +1,7 @@
 ---
 title: CSS
 layout: "area.njk"
-tags: ["css", "område"]
+category: område
 eleventyNavigation:
     key: css
     parent: tekniker

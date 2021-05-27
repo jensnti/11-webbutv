@@ -1,6 +1,6 @@
 ---
 title: Selektion
-tags: ["selektion", "del"]
+category: del
 layout: part.njk
 eleventyNavigation:
     key: selektion

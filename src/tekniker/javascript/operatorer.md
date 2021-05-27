@@ -1,6 +1,6 @@
 ---
 title: Operatorer
-tags: ["operatorer", "del"]
+category: del
 layout: part.njk
 eleventyNavigation:
     key: operatorer

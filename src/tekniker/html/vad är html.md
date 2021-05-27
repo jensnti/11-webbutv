@@ -1,9 +1,9 @@
 ---
-title: Språket
+title: Vad är HTML?
 layout: part.njk
-tags: ["språket", "del"]
+category: del
 eleventyNavigation:
-    key: språket
+    key: vad är html
     parent: html
     order: 0
 ---

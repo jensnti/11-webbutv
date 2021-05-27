@@ -1,7 +1,7 @@
 ---
 title: Kod
 layout: "area.njk"
-tags: ["kod", "område"]
+category: område
 eleventyNavigation:
     key: kod
     parent: praxis

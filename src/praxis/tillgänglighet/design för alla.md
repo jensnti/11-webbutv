@@ -1,6 +1,6 @@
 ---
 title: Design för alla
-tags: ["design", "del"]
+category: del
 layout: part.njk
 templateOverride: njk, md
 eleventyNavigation:

@@ -1,6 +1,6 @@
 ---
 title: Datatyper
-tags: ["datatyper", "del"]
+category: del
 layout: part.njk
 templateOverride: njk, md
 eleventyNavigation:
@@ -70,17 +70,17 @@ console.log(bamse[0]);
 {% uppgifter %}
 
 ## Uppgifter
-### ⭐
-**Uppgift 1**
+#### ⭐
+##### Uppgift 1
 
 Koda i konsollen.
 
-**Uppgift 2**
+##### Uppgift 2
 
 Skapa ett nytt dokument.
 
-### ⭐⭐
-**Uppgift 3**
+#### ⭐⭐
+##### Uppgift 3
 
 [Figurer](https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_figurer_i_Bamse#Bamse)
  - Skapa flera objekt för karaktärer.

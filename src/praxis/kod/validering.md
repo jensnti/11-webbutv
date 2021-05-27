@@ -1,6 +1,6 @@
 ---
 title: Validering
-tags: ["validering", "del"]
+category: del
 layout: part.njk
 eleventyNavigation:
     key: validering

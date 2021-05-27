@@ -1,6 +1,6 @@
 ---
 title: Vad är CSS?
-tags: ["css", "del"]
+category: del
 layout: part.njk
 eleventyNavigation:
     key: vad är css

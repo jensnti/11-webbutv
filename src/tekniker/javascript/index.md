@@ -1,7 +1,7 @@
 ---
 title: Javascript
 layout: "area.njk"
-tags: ["javascript", "område"]
+category: område
 templateOverride: njk, md
 eleventyNavigation:
     key: javascript
@@ -9,4 +9,4 @@ eleventyNavigation:
     order: 2
 ---
 
-Områdesintro JS
+<p class="lead">Området Javascript innehåller följande delar.</p>

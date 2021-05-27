@@ -1,7 +1,7 @@
 ---
 title: Praxis
 layout: "theme.njk"
-tags: ["tema", "praxis"]
+category: tema
 permalink: "{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}.html"
 templateOverride: njk, md
 eleventyNavigation:
@@ -10,9 +10,6 @@ eleventyNavigation:
     order: 1
     excerpt: Tema praxis
 ---
-
-<h2>Praxis</h2>
-
 Introduktion till ämnet.
 
 Lista över teman, klicka på för områden.
