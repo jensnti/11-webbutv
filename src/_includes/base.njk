@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{ '/css/custom.css' }}">
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
-        <title>{{ title }} - {{ meta.siteName }}</title>
+        <title>{% if page.fileSlug %}{{ title }} - {% endif %}{{ meta.siteName }}</title>
     </head>
     <body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
         <header class="container">
-             <h1 class="h1 text-nowrap">
+             <h1 class="h1 pt-4 text-nowrap">
                 {% if category %}
                     {{ category | capitalize }} -
                 {% endif %}
