@@ -13,6 +13,8 @@ module.exports = function (eleventyConfig) {
 
     // eleventyConfig.addPassthroughCopy('./src/css');
 
+    eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
     eleventyConfig.addPairedShortcode('intro', function (content) {
         return `<section class="col-md-3 intro">${content}</section>`;
     });
@@ -44,11 +46,13 @@ module.exports = function (eleventyConfig) {
     /* Markdown Overrides */
     let markdownLibrary = markdownIt({
         html: true
-    }).use(markdownItAnchor, {
+    })
+    .use(markdownItAnchor, {
         permalink: true,
         permalinkClass: 'anchor',
         permalinkSymbol: '#',
-        permalinkSpace: true,
+        permalinkSpace: false,
+        permalinkBefore: true,
         level: [1, 2, 3],
         slugify: (s) =>
             s
