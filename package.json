@@ -17,9 +17,13 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "bootstrap": "^5.0.0-beta3",
+    "eleventy-plugin-reading-time": "^0.0.1",
+    "install": "^0.13.0",
     "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^7.1.0"
+    "markdown-it-anchor": "^7.1.0",
+    "npm": "^7.14.0"
   },
   "devDependencies": {
     "@11ty/eleventy-navigation": "^0.2.0",
