@@ -7,13 +7,30 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{ '/css/custom.css' }}">
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
-        <title>{{ title }}</title>
+        <title>{{ title }} - {{ meta.siteName }}</title>
     </head>
-    <body>
-        {% include "breadcrumbs.njk" %}
+    <body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
+        <header class="container">
+             <h1 class="h1 text-nowrap">
+                {% if category %}
+                    {{ category | capitalize }} -
+                {% endif %}
+                 {% if page.fileSlug %}
+                    {{ title }}
+                {% else %}
+                    {{ meta.siteName }}
+                {% endif %}
+            </h1>
+            {% include "breadcrumbs.njk" %}
+        </header>
         <main class="container">
             {{ content | safe }}
         </main>
+        <footer class="mt-auto py-5">
+            <div class="container">
+                <p class="text-muted">Copyright {% year %} Jens Andreasson</p>
+            </div>
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </body>
 </html>

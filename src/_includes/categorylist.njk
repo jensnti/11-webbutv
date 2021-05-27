@@ -1,0 +1,13 @@
+{% set currentPage %}{{ page.fileSlug }}{% endset %}
+{% set navPages = collections.all | eleventyNavigation(currentPage) %}
+{% macro renderNavListItem(entry) -%}
+<li class="nav-item">
+<a class="h3 nav-link {% if entry.url == page.url %} active{% endif %}" href="{{ entry.url | url }}">{{ entry.title | capitalize }}</a>
+{%- if entry.children.length -%}
+{%- endif -%} 
+</li>
+{%- endmacro %}
+
+<ul class="nav flex-column">
+{%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+</ul>

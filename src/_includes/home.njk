@@ -1,50 +1,15 @@
 ---
 layout: base.njk
 ---
-<header>
-    <h1>{{ title }}</h1>
-</header>
-{# <nav class="accordion">
-    {% set navPages = collections.all | eleventyNavigation(title.toLowerCase()) %}
-    {% macro renderNavListItem(entry, index) %}
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-{{ index }}">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ index }}" aria-expanded="true" aria-controls="collapse-{{ index }}">
-                    {{ entry.title }}
-                </button>
-            </h2>
-            <div id="collapse-{{ index }}" class="accordion-collapse collapse show" aria-labelledby="heading-{{ index }}" data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-            </div>
-        <li class="home-nav-item">
-            <h2><a href="{{ entry.url | url }}">{{ entry.title }}</a></h2>
-        </li>
-        {% if entry.children.length %}
-            <li class="home-nav-sub">
-                <ul class="home-nav-sub">
-                    {% for child in entry.children %}{{ renderNavListItem(child, loop.index) }}{% endfor %}
-                </ul>
-            </li>
-        {% endif %}
-    {% endmacro %}
 
-    {% for entry in navPages %}{{ renderNavListItem(entry, loop.index) }}{% endfor %}
-</nav> #}
-{# {% set navPages = collections.all | eleventyNavigation %}
-{{ navPages.shift() | dump | safe }} #}
-
-{# {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }} #}
-
-{# {{ collections.all | eleventyNavigation(title.toLowerCase()) | eleventyNavigationToHtml({ showExcerpt: true }) | safe }} #}
+{{ content | safe }}
 
 <div class="accordion accordion-flush" id="accordion">
     {% set navPages = collections.all | eleventyNavigation(title.toLowerCase()) %}
     {% for entry in navPages %}
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTop-{{loop.index}}">
-                <a class="accordion-link" href="{{ entry.url | url }}">{{ entry.title }}</a>
+                <a class="accordion-link" href="{{ entry.url | url }}">{{ entry.title | capitalize }}</a>
             </h2>
         </div>
         {% if entry.children.length %}
@@ -58,7 +23,7 @@ layout: base.njk
                             data-bs-target="#{{ child.title }}-{{loop.index}}"
                             aria-expanded="false"
                             aria-controls="{{ child.title }}-{{loop.index}}">
-                            {{ child.title }}
+                            {{ child.title | capitalize }}
                         </button>
                     </h2>
                     <div id="{{ child.title }}-{{loop.index}}" class="accordion-collapse collapse" aria-labelledby="heading-{{ child.title }}{{loop.index}}" data-bs-parent="#accordion">
@@ -66,7 +31,7 @@ layout: base.njk
                             {% if child.children.length %}
                                 <ul class="list-unstyled">
                                 {% for child in child.children %}
-                                    <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
+                                    <li><a  class="accordion-child" href="{{ child.url | url }}">{{ child.title | capitalize }}</a></li>
                                 {% endfor %}
                                 </ul>
                             {% endif %}
