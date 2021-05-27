@@ -57,16 +57,18 @@ alert('Oj ' + name + ', ' + birthYear + ' var länge sedan!');
 
 ## Uppgifter
 ### ⭐
-**Uppgift 1**
+#### Uppgift 1
 
 Koda i konsollen.
 
-**Uppgift 2**
+#### Uppgift 2
 
 Skapa ett nytt dokument.
 
 ### ⭐⭐
-**Uppgift 3**
+#### Uppgift 3
+
+{% extra %}
 
 Skapa ett nytt dokument.
 Skapa inmatning för följande frågor och skriv ut användarens svar.
@@ -75,5 +77,7 @@ Skapa inmatning för följande frågor och skriv ut användarens svar.
  - Vilken metod kan du använda för att skriva ut en variabel?
 
 Skriv ut svaret på fråga ett och två som **ett** meddelande till användaren.
+
+{% endextra %}
 
 {% enduppgifter %}

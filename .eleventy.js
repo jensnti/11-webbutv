@@ -12,15 +12,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(readingTime);
     eleventyConfig.addPlugin(emojiReadTime, {
-        emoji: '',
-        label: "minuter",
+        emoji: '📕',
+        label: "minuters läsning",
         wpm: 200,
-        bucketSize: 3
+        bucketSize: 3,
       });
 
     eleventyConfig.addWatchTarget('./src/sass/');
+    eleventyConfig.addWatchTarget('./src/js/');
 
-    // eleventyConfig.addPassthroughCopy('./src/css');
+    eleventyConfig.addPassthroughCopy('./src/js');
 
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
@@ -34,6 +35,10 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPairedShortcode('uppgifter', function (content) {
         return `<section class="col-md-3 assignments">${content}</section>`;
+    });
+
+    eleventyConfig.addPairedShortcode('extra', function (content) {
+        return `<div class="extra">${content}</div>`;
     });
 
     eleventyConfig.addFilter('splice', (path) => {
