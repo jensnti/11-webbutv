@@ -80,6 +80,9 @@ Koda i konsollen.
 Skapa ett nytt dokument.
 
 ### ⭐⭐
+
+{% extra %}
+
 #### Uppgift 3
 
 [Figurer](https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_figurer_i_Bamse#Bamse)
@@ -89,5 +92,7 @@ Skapa ett nytt dokument.
  - Med ```console.log()```, skriv ut hur många karaktärer du har sparat i varje array.
 
 För att räkna antalet element i en array kan du använda ```array.length```.
+
+{% endextra %}
 
 {% enduppgifter %}

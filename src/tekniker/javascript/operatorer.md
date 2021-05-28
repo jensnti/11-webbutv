@@ -76,12 +76,17 @@ Koda i konsollen.
 Skapa ett nytt dokument.
 
 ### ⭐⭐
+
+{% extra %}
+
 #### Uppgift 3
 
 Skapa ett nytt dokument. Koda utträkningar för alla räknesätten.
 Låt användaren mata in värden med ```prompt()```.
 
-Skapa en resultsträng där du kombinerar siffror och strängar.
+Skapa en resultatsträng där du kombinerar siffror och strängar.
 Skriv ut resultatsträngen med både ```console.log()``` och ```alert()```.
+
+{% endextra %}
 
 {% enduppgifter %}

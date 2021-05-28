@@ -66,9 +66,10 @@ Koda i konsollen.
 Skapa ett nytt dokument.
 
 ### ⭐⭐
-#### Uppgift 3
 
 {% extra %}
+
+#### Uppgift 3
 
 Skapa ett nytt dokument.
 Skapa inmatning för följande frågor och skriv ut användarens svar.
