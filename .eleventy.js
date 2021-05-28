@@ -3,14 +3,12 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
-const readingTime = require('eleventy-plugin-reading-time');
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 
 module.exports = function (eleventyConfig) {
     // eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
-    eleventyConfig.addPlugin(readingTime);
     eleventyConfig.addPlugin(emojiReadTime, {
         emoji: '📕',
         label: "minuters läsning",
