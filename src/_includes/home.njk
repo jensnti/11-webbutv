@@ -15,7 +15,7 @@ layout: base.njk
         {% if entry.children.length %}
             {% for child in entry.children %}
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading-{{ child.title }}-{{loop.index}}">
+                    <h3 class="accordion-header" id="heading-{{ child.title }}-{{loop.index}}">
                         <button
                             class="accordion-button collapsed"
                             type="button"
@@ -25,7 +25,7 @@ layout: base.njk
                             aria-controls="{{ child.title }}-{{loop.index}}">
                             {{ child.title | capitalize }}
                         </button>
-                    </h2>
+                    </h3>
                     <div id="{{ child.title }}-{{loop.index}}" class="accordion-collapse collapse" aria-labelledby="heading-{{ child.title }}{{loop.index}}" data-bs-parent="#accordion">
                         <div class="accordion-body">
                             {% if child.children.length %}
@@ -42,3 +42,4 @@ layout: base.njk
         {% endif %}
     {% endfor %}
 </div>
+<script src="/js/home.js"></script>
