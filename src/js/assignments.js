@@ -1,6 +1,23 @@
+/** look away 💩 **/
+let storage, part, subject, assignmentsElements, extra, area;
+
 const strip = (str) => str.toLowerCase().replace(' ', '');
 
-let storage, part, subject, assignmentsElements, extra, area;
+const checkAssignmentExists = (arr, id) => {
+    let check = -1;
+    arr.forEach((element, index) => {
+        if (element.id === id) check = index;
+    });
+    return check;
+};
+
+const checkAssignmentsStatus = (arr, supposedLength) => {
+    let count = 0;
+    arr.forEach(element => {
+        if (element.completed === true) count += 1;
+    });
+    return supposedLength === count ? true : false;
+};
 
 const createCheckbox = (id, type) => {
     const element = document.createElement('input');
@@ -8,19 +25,29 @@ const createCheckbox = (id, type) => {
     element.name = id;
     element.id = id;
 
-    if (storage[area][part][type].indexOf(id) !== -1) {
+    let index = checkAssignmentExists(storage[area][part][type], id);
+
+    if (index !== -1 && storage[area][part][type][index].completed) {
         element.checked = true;
     }
 
     element.addEventListener('click', (e) => {
-        const check = storage[area][part][type].indexOf(e.target.id);
-        if (check === -1) {
-            storage[area][part][type].push(e.target.id);
+        let index = checkAssignmentExists(storage[area][part][type], id);
+
+        if (index === -1) {
+            let temp = {
+                id: e.target.id,
+                completed: true,
+                date: Date.now()
+            };
+            storage[area][part][type].push(temp);
         } else {
-            storage[area][part][type].splice(check, 1);
+            storage[area][part][type][index].completed = storage[area][part][type][index].completed ? false : true;
+            storage[area][part][type][index].date = Date.now();
         }
+
         if (type === 'basic') {
-            if (storage[area][part][type].length === assignmentsElements[type].length) {
+            if (checkAssignmentsStatus(storage[area][part][type], assignmentsElements.basic.length)) {
                 extra.classList.add('visible');
                 extra.classList.remove('invisible');
             } else {
@@ -87,9 +114,7 @@ window.addEventListener('load', () => {
         }
     }
 
-    console.log(storage)
-
-    if (storage[area][part].basic.length === assignmentsElements.basic.length) {
+    if (checkAssignmentsStatus(storage[area][part].basic, assignmentsElements.basic.length) ) {
         extra.classList.add('visible');
         extra.classList.remove('invisible');
     } else {
