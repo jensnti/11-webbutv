@@ -1,30 +1,32 @@
 const strip = (str) => str.toLowerCase().replace(' ', '');
 
-let storage, part, subject, assignmentsElements, extra;
+let storage, part, subject, assignmentsElements, extra, area;
 
-const createCheckbox = (id) => {
+const createCheckbox = (id, type) => {
     const element = document.createElement('input');
     element.type = "checkbox";
     element.name = id;
     element.id = id;
 
-    if (storage[part].basic.indexOf(id) !== -1) {
+    if (storage[area][part][type].indexOf(id) !== -1) {
         element.checked = true;
     }
 
     element.addEventListener('click', (e) => {
-        const check = storage[part].basic.indexOf(e.target.id);
+        const check = storage[area][part][type].indexOf(e.target.id);
         if (check === -1) {
-            storage[part].basic.push(e.target.id);
+            storage[area][part][type].push(e.target.id);
         } else {
-            storage[part].basic.splice(check, 1);
+            storage[area][part][type].splice(check, 1);
         }
-        if (storage[part].basic.length === assignmentsElements.basic.length) {
-            extra.classList.add('visible');
-            extra.classList.remove('invisible');
-        } else {
-            extra.classList.remove('visible');
-            extra.classList.add('invisible');
+        if (type === 'basic') {
+            if (storage[area][part][type].length === assignmentsElements[type].length) {
+                extra.classList.add('visible');
+                extra.classList.remove('invisible');
+            } else {
+                extra.classList.remove('visible');
+                extra.classList.add('invisible');
+            }
         }
         window.localStorage.setItem(subject, JSON.stringify(storage));
     });
@@ -40,12 +42,14 @@ const getAssignments = (container) => {
             extra = true;
         }
         if (element.textContent.toLowerCase().search('uppgift') !== -1) {
-           if (element.tagName !== 'H4') return;
-            if (extra) {
-                extraAssignments.push(element);
-            } else {
-                basicAssignments.push(element);
+            if (element.tagName === 'DIV') {
+                element.childNodes.forEach(child => {
+                    if (child.tagName !== 'H4') return;
+                    extraAssignments.push(child);
+                })
             }
+            if (element.tagName !== 'H4') return;
+            basicAssignments.push(element);
         }
     });
     return {
@@ -58,6 +62,7 @@ window.addEventListener('load', () => {
     const title = document.title.split('-');
     subject = title[1].trim().toLowerCase();
     part = title[0].trim().toLowerCase();
+    area = document.querySelector('#area').textContent.trim().toLowerCase();
     const assignmentsContainer = document.querySelector('.assignments')
     extra = assignmentsContainer.querySelector('.extra');
 
@@ -67,20 +72,24 @@ window.addEventListener('load', () => {
 
     if (storage === null) {
         storage = {
-            [part]: {
-                basic: [],
-                extra: []
+            [area]: {
+                [part]: {
+                    basic: [],
+                    extra: []
+                }    
             }
         };
     } else {
-        if (!storage.hasOwnProperty(part)) {
-            storage[part] = {};
-            storage[part].basic = [];
-            storage[part].extra = [];
+        if (!storage[area].hasOwnProperty(part)) {
+            storage[area][part] = {};
+            storage[area][part].basic = [];
+            storage[area][part].extra = [];
         }
     }
 
-    if (storage[part].basic.length === assignmentsElements.basic.length) {
+    console.log(storage)
+
+    if (storage[area][part].basic.length === assignmentsElements.basic.length) {
         extra.classList.add('visible');
         extra.classList.remove('invisible');
     } else {
@@ -92,6 +101,13 @@ window.addEventListener('load', () => {
         element.classList.add('d-flex');
         element.classList.add('justify-content-between');
         element.classList.add('align-items-center');
-        element.appendChild(createCheckbox(strip(element.textContent)));
+        element.appendChild(createCheckbox(strip(element.textContent), 'basic'));
+    });
+
+    assignmentsElements.extra.forEach(element => {
+        element.classList.add('d-flex');
+        element.classList.add('justify-content-between');
+        element.classList.add('align-items-center');
+        element.appendChild(createCheckbox(strip(element.textContent), 'extra'));
     });
 });
