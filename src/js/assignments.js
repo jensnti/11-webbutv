@@ -46,7 +46,7 @@ const createCheckbox = (id, type) => {
             storage[area][part][type][index].date = Date.now();
         }
 
-        if (type === 'basic') {
+        if (type === 'basic' && extra) {
             if (checkAssignmentsStatus(storage[area][part][type], assignmentsElements.basic.length)) {
                 extra.classList.add('visible');
                 extra.classList.remove('invisible');
@@ -107,6 +107,9 @@ window.addEventListener('load', () => {
             }
         };
     } else {
+        if(!storage[area]) {
+            storage[area] = {};
+        }
         if (!storage[area].hasOwnProperty(part)) {
             storage[area][part] = {};
             storage[area][part].basic = [];
@@ -114,12 +117,19 @@ window.addEventListener('load', () => {
         }
     }
 
-    if (checkAssignmentsStatus(storage[area][part].basic, assignmentsElements.basic.length) ) {
-        extra.classList.add('visible');
-        extra.classList.remove('invisible');
-    } else {
-        extra.classList.remove('visible');
-        extra.classList.add('invisible');
+    storage[area][part].assignments =  {
+        basic: assignmentsElements.basic.length,
+        extra: assignmentsElements.extra.length
+    };
+
+    if(extra) {
+        if (checkAssignmentsStatus(storage[area][part].basic, assignmentsElements.basic.length) ) {
+            extra.classList.add('visible');
+            extra.classList.remove('invisible');
+        } else {
+            extra.classList.remove('visible');
+            extra.classList.add('invisible');
+        }    
     }
 
     assignmentsElements.basic.forEach(element => {
@@ -135,4 +145,6 @@ window.addEventListener('load', () => {
         element.classList.add('align-items-center');
         element.appendChild(createCheckbox(strip(element.textContent), 'extra'));
     });
+
+    console.log(storage)
 });
