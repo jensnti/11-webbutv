@@ -10,4 +10,4 @@ eleventyNavigation:
     order: 0
     excerpt: Tema tekniker
 ---
-<p class="lead">Temat tekniker innehåller följande områden.</p>
+## Temat tekniker innehåller följande områden
