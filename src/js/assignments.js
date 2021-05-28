@@ -1,46 +1,97 @@
 const strip = (str) => str.toLowerCase().replace(' ', '');
 
-let assignments = [];
+let storage, part, subject, assignmentsElements, extra;
 
-const createCheckbox = (id, len, extra) => {
+const createCheckbox = (id) => {
     const element = document.createElement('input');
     element.type = "checkbox";
-    element.name = strip(id);
-    element.id = strip(id);
+    element.name = id;
+    element.id = id;
+
+    if (storage[part].basic.indexOf(id) !== -1) {
+        element.checked = true;
+    }
+
     element.addEventListener('click', (e) => {
-        console.log(e.target.id)
-        const check = assignments.indexOf(e.target.id);
+        const check = storage[part].basic.indexOf(e.target.id);
         if (check === -1) {
-            console.log(check)
-            assignments.push(e.target.id);
+            storage[part].basic.push(e.target.id);
         } else {
-            console.log(check)
-            assignments.splice(check, 1);
+            storage[part].basic.splice(check, 1);
         }
-        console.log(assignments);
-        if (assignments.length === len -1) {
-            console.log('last');
-            extra.classList.toggle('d-none');
+        if (storage[part].basic.length === assignmentsElements.basic.length) {
+            extra.classList.add('visible');
+            extra.classList.remove('invisible');
+        } else {
+            extra.classList.remove('visible');
+            extra.classList.add('invisible');
         }
+        window.localStorage.setItem(subject, JSON.stringify(storage));
     });
     return element;
 }
 
-window.addEventListener('load', () => {
-    // const header = document.querySelector('h1').textContent.split('-')[1].trim().toLowerCase();
-    const assignmentsElement = document.querySelector('.assignments')
-
-    const extra = assignmentsElement.querySelector('.extra');
-    extra.classList.toggle('d-none');
-
-
-    const h4 = assignmentsElement.querySelectorAll('h4');
-    h4.forEach((element) => {
-        if (element.textContent.toLowerCase().includes('uppgift')) {
-            const checkbox = createCheckbox(element.textContent, h4.length, extra);
-            element.classList.add('d-flex');
-            element.classList.add('justify-content-between');
-            element.appendChild(checkbox);
+const getAssignments = (container) => {
+    let basicAssignments = [];
+    let extraAssignments = [];
+    let extra = false;
+    container.childNodes.forEach(element => {
+        if (element.textContent.toLowerCase().search('⭐⭐') !== -1) {
+            extra = true;
         }
+        if (element.textContent.toLowerCase().search('uppgift') !== -1) {
+           if (element.tagName !== 'H4') return;
+            if (extra) {
+                extraAssignments.push(element);
+            } else {
+                basicAssignments.push(element);
+            }
+        }
+    });
+    return {
+        basic: basicAssignments,
+        extra: extraAssignments
+    };
+}
+
+window.addEventListener('load', () => {
+    const title = document.title.split('-');
+    subject = title[1].trim().toLowerCase();
+    part = title[0].trim().toLowerCase();
+    const assignmentsContainer = document.querySelector('.assignments')
+    extra = assignmentsContainer.querySelector('.extra');
+
+    assignmentsElements = getAssignments(assignmentsContainer);
+
+    storage = JSON.parse(window.localStorage.getItem(subject));
+
+    if (storage === null) {
+        storage = {
+            [part]: {
+                basic: [],
+                extra: []
+            }
+        };
+    } else {
+        if (!storage.hasOwnProperty(part)) {
+            storage[part] = {};
+            storage[part].basic = [];
+            storage[part].extra = [];
+        }
+    }
+
+    if (storage[part].basic.length === assignmentsElements.basic.length) {
+        extra.classList.add('visible');
+        extra.classList.remove('invisible');
+    } else {
+        extra.classList.remove('visible');
+        extra.classList.add('invisible');
+    }
+
+    assignmentsElements.basic.forEach(element => {
+        element.classList.add('d-flex');
+        element.classList.add('justify-content-between');
+        element.classList.add('align-items-center');
+        element.appendChild(createCheckbox(strip(element.textContent)));
     });
 });
