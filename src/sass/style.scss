@@ -68,10 +68,12 @@ li {
     max-width: null !important;
 }
 
+.accordion-item {
+    border: none;
+}
+
 .accordion-button {
     font-size: map-get($font-sizes, 3);
-    padding: map-get($spacers, 3) 0;
-    margin-left: map-get($spacers, 3);
     &:hover {
         color: #0a58ca;
     }
@@ -112,8 +114,13 @@ li {
 .accordion-child {
     font-size: map-get($font-sizes, 4);
     text-decoration: none;
-    margin-left: map-get($spacers, 2);
+    margin-left: map-get($spacers, 3);
     &:hover {
         text-decoration: underline;
     }
+}
+
+.progress {
+    // border-radius: 0;
+    height: map-get($border-widths , 5);
 }
