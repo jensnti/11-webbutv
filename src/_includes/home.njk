@@ -8,25 +8,26 @@ layout: base.njk
     {% set navPages = collections.all | eleventyNavigation(title.toLowerCase()) %}
     {% for entry in navPages %}
         <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTop-{{loop.index}}">
-                <a class="accordion-link" href="{{ entry.url | url }}">{{ entry.title | capitalize }}</a>
+            <h2 class="accordion-header" id="headingTop">
+                {# <a class="accordion-link" href="{{ entry.url | url }}">{{ entry.title | capitalize }}</a> #}
+                <span class="accordion-link">{{ entry.title | capitalize }}</a>
             </h2>
         </div>
         {% if entry.children.length %}
             {% for child in entry.children %}
                 <div class="accordion-item">
-                    <h3 class="accordion-header" id="heading-{{ child.title }}-{{loop.index}}">
+                    <h3 class="accordion-header" id="heading-{{ child.title }}">
                         <button
                             class="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#{{ child.title }}-{{loop.index}}"
+                            data-bs-target="#{{ child.title }}"
                             aria-expanded="false"
-                            aria-controls="{{ child.title }}-{{loop.index}}">
+                            aria-controls="{{ child.title }}">
                             {{ child.title | capitalize }}
                         </button>
                     </h3>
-                    <div id="{{ child.title }}-{{loop.index}}" class="accordion-collapse collapse" aria-labelledby="heading-{{ child.title }}{{loop.index}}" data-bs-parent="#accordion">
+                    <div id="{{ child.title }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ child.title }}{{loop.index}}" data-bs-parent="#accordion">
                         <div class="accordion-body">
                             {% if child.children.length %}
                                 <ul class="list-unstyled">
