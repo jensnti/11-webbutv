@@ -9,4 +9,4 @@ eleventyNavigation:
     order: 2
 ---
 
-<p class="lead">Området Javascript innehåller följande delar.</p>
+## Området Javascript innehåller följande delar 

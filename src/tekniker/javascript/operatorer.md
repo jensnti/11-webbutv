@@ -7,6 +7,8 @@ eleventyNavigation:
     parent: javascript
     order: 2
 ---
+{% intro %}
+
 ## Introduktion
 En operator är en matematisk symbol som producerar ett resultat. Genom att kombinera variabler, värden och 
 operatorer kan vi skapa uttryck.
@@ -16,6 +18,10 @@ operatorer kan vi skapa uttryck.
  - Att likameds tecknet används för att tilldela värden i programmeringen.
  - Ett uttryck som resulterar i ett numeriskt värde kallas för ett aritmetiskt uttryck.
  - Du kan inte räkna med strängar. Använd ```parseInt()```.
+
+{% endintro %}
+
+{% instruktioner %}
 
  ## Instruktioner
 Öppna utvecklarverktygen i din webbläsare(F12) och välj console.
@@ -55,21 +61,32 @@ console.log(message);
 |Likamed|```===```|Undersök om två värden är densamma.|
 |Inte, inte likadmed|```! !==```|För att undersöka om något inte är, eller inte är likamed.|
 
+{% endinstruktioner %}
+
+{% uppgifter %}
+
 ## Uppgifter
 ### ⭐
-**Uppgift 1**
+#### Uppgift 1
 
 Koda i konsollen.
 
-**Uppgift 2**
+#### Uppgift 2
 
 Skapa ett nytt dokument.
 
 ### ⭐⭐
-**Uppgift 3**
+
+{% extra %}
+
+#### Uppgift 3
 
 Skapa ett nytt dokument. Koda utträkningar för alla räknesätten.
 Låt användaren mata in värden med ```prompt()```.
 
-Skapa en resultsträng där du kombinerar siffror och strängar.
+Skapa en resultatsträng där du kombinerar siffror och strängar.
 Skriv ut resultatsträngen med både ```console.log()``` och ```alert()```.
+
+{% endextra %}
+
+{% enduppgifter %}

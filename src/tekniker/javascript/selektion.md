@@ -7,6 +7,8 @@ eleventyNavigation:
     parent: javascript
     order: 3
 ---
+{% intro %}
+
 ## Introduktion
 Ett program behöver kunna göra val. Selektion är kodstruktur som testar om 
 uttryck är sant eller falskt.
@@ -22,7 +24,11 @@ if (...) {
 ### Tänk på
  - 
 
- ## Instruktioner
+{% endintro %}
+
+{% instruktioner %}
+
+## Instruktioner
 Öppna utvecklarverktygen i din webbläsare(F12) och välj console.
 ```
 
@@ -32,17 +38,32 @@ Skapa ett nytt html-dokument, koda i ett ```<script>``` element.
 
 ```
 
+{% endinstruktioner %}
+
+{% uppgifter %}
+
 ## Uppgifter
 ### ⭐
-**Uppgift 1**
+#### Uppgift 1
 
 Koda i konsollen.
 
-**Uppgift 2**
+#### Uppgift 2
 
 Skapa ett nytt dokument.
 
 ### ⭐⭐
-**Uppgift 3**
 
-Skapa ett nytt dokument.
+{% extra %}
+
+#### Uppgift 3
+
+Extra
+
+#### Uppgift 4
+
+Extra
+
+{% endextra %}
+
+{% enduppgifter %}

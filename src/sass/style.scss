@@ -70,7 +70,8 @@ li {
 
 .accordion-button {
     font-size: map-get($font-sizes, 3);
-    padding: 1rem 0;
+    padding: map-get($spacers, 3) 0;
+    margin-left: map-get($spacers, 3);
     &:hover {
         color: #0a58ca;
     }
@@ -99,10 +100,9 @@ li {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 1rem 0;
-    color: #212529;
+    padding: map-get($spacers, 3) 0;
+    margin-top: map-get($spacers, 2);
     text-align: left;
-    background-color: #fff;
     border: 0;
     border-radius: 0;
     overflow-anchor: none;
@@ -112,6 +112,7 @@ li {
 .accordion-child {
     font-size: map-get($font-sizes, 4);
     text-decoration: none;
+    margin-left: map-get($spacers, 2);
     &:hover {
         text-decoration: underline;
     }

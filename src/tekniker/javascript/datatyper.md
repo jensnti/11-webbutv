@@ -70,17 +70,20 @@ console.log(bamse[0]);
 {% uppgifter %}
 
 ## Uppgifter
-#### ⭐
-##### Uppgift 1
+### ⭐
+#### Uppgift 1
 
 Koda i konsollen.
 
-##### Uppgift 2
+#### Uppgift 2
 
 Skapa ett nytt dokument.
 
-#### ⭐⭐
-##### Uppgift 3
+### ⭐⭐
+
+{% extra %}
+
+#### Uppgift 3
 
 [Figurer](https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_figurer_i_Bamse#Bamse)
  - Skapa flera objekt för karaktärer.
@@ -89,5 +92,7 @@ Skapa ett nytt dokument.
  - Med ```console.log()```, skriv ut hur många karaktärer du har sparat i varje array.
 
 För att räkna antalet element i en array kan du använda ```array.length```.
+
+{% endextra %}
 
 {% enduppgifter %}

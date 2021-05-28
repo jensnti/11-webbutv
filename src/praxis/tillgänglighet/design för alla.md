@@ -9,8 +9,4 @@ eleventyNavigation:
     order: 1
 ---
 
-## Design för alla
-
-{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}
-
-{{ page.fileSlug | slug | dump }}
+Design för alla
