@@ -1,9 +1,10 @@
 ---
 layout: base.njk
 ---
-<span class="text-muted">{{ content | emojiReadTime }}</span>
+<span id="area" class="visually-hidden">{{ eleventyNavigation.parent }}</span>
+<span text-muted">{{ content | emojiReadTime }}</span>
 
-<div class="row">
+<div class="row mt-1">
     {{ content | safe }}
 </div>
 

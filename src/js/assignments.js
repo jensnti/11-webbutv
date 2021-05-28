@@ -1,30 +1,59 @@
+/** look away 💩 **/
+let storage, part, subject, assignmentsElements, extra, area;
+
 const strip = (str) => str.toLowerCase().replace(' ', '');
 
-let storage, part, subject, assignmentsElements, extra;
+const checkAssignmentExists = (arr, id) => {
+    let check = -1;
+    arr.forEach((element, index) => {
+        if (element.id === id) check = index;
+    });
+    return check;
+};
 
-const createCheckbox = (id) => {
+const checkAssignmentsStatus = (arr, supposedLength) => {
+    let count = 0;
+    arr.forEach(element => {
+        if (element.completed === true) count += 1;
+    });
+    return supposedLength === count ? true : false;
+};
+
+const createCheckbox = (id, type) => {
     const element = document.createElement('input');
     element.type = "checkbox";
     element.name = id;
     element.id = id;
 
-    if (storage[part].basic.indexOf(id) !== -1) {
+    let index = checkAssignmentExists(storage[area][part][type], id);
+
+    if (index !== -1 && storage[area][part][type][index].completed) {
         element.checked = true;
     }
 
     element.addEventListener('click', (e) => {
-        const check = storage[part].basic.indexOf(e.target.id);
-        if (check === -1) {
-            storage[part].basic.push(e.target.id);
+        let index = checkAssignmentExists(storage[area][part][type], id);
+
+        if (index === -1) {
+            let temp = {
+                id: e.target.id,
+                completed: true,
+                date: Date.now()
+            };
+            storage[area][part][type].push(temp);
         } else {
-            storage[part].basic.splice(check, 1);
+            storage[area][part][type][index].completed = storage[area][part][type][index].completed ? false : true;
+            storage[area][part][type][index].date = Date.now();
         }
-        if (storage[part].basic.length === assignmentsElements.basic.length) {
-            extra.classList.add('visible');
-            extra.classList.remove('invisible');
-        } else {
-            extra.classList.remove('visible');
-            extra.classList.add('invisible');
+
+        if (type === 'basic') {
+            if (checkAssignmentsStatus(storage[area][part][type], assignmentsElements.basic.length)) {
+                extra.classList.add('visible');
+                extra.classList.remove('invisible');
+            } else {
+                extra.classList.remove('visible');
+                extra.classList.add('invisible');
+            }
         }
         window.localStorage.setItem(subject, JSON.stringify(storage));
     });
@@ -40,12 +69,14 @@ const getAssignments = (container) => {
             extra = true;
         }
         if (element.textContent.toLowerCase().search('uppgift') !== -1) {
-           if (element.tagName !== 'H4') return;
-            if (extra) {
-                extraAssignments.push(element);
-            } else {
-                basicAssignments.push(element);
+            if (element.tagName === 'DIV') {
+                element.childNodes.forEach(child => {
+                    if (child.tagName !== 'H4') return;
+                    extraAssignments.push(child);
+                })
             }
+            if (element.tagName !== 'H4') return;
+            basicAssignments.push(element);
         }
     });
     return {
@@ -58,6 +89,7 @@ window.addEventListener('load', () => {
     const title = document.title.split('-');
     subject = title[1].trim().toLowerCase();
     part = title[0].trim().toLowerCase();
+    area = document.querySelector('#area').textContent.trim().toLowerCase();
     const assignmentsContainer = document.querySelector('.assignments')
     extra = assignmentsContainer.querySelector('.extra');
 
@@ -67,20 +99,22 @@ window.addEventListener('load', () => {
 
     if (storage === null) {
         storage = {
-            [part]: {
-                basic: [],
-                extra: []
+            [area]: {
+                [part]: {
+                    basic: [],
+                    extra: []
+                }    
             }
         };
     } else {
-        if (!storage.hasOwnProperty(part)) {
-            storage[part] = {};
-            storage[part].basic = [];
-            storage[part].extra = [];
+        if (!storage[area].hasOwnProperty(part)) {
+            storage[area][part] = {};
+            storage[area][part].basic = [];
+            storage[area][part].extra = [];
         }
     }
 
-    if (storage[part].basic.length === assignmentsElements.basic.length) {
+    if (checkAssignmentsStatus(storage[area][part].basic, assignmentsElements.basic.length) ) {
         extra.classList.add('visible');
         extra.classList.remove('invisible');
     } else {
@@ -92,6 +126,13 @@ window.addEventListener('load', () => {
         element.classList.add('d-flex');
         element.classList.add('justify-content-between');
         element.classList.add('align-items-center');
-        element.appendChild(createCheckbox(strip(element.textContent)));
+        element.appendChild(createCheckbox(strip(element.textContent), 'basic'));
+    });
+
+    assignmentsElements.extra.forEach(element => {
+        element.classList.add('d-flex');
+        element.classList.add('justify-content-between');
+        element.classList.add('align-items-center');
+        element.appendChild(createCheckbox(strip(element.textContent), 'extra'));
     });
 });
