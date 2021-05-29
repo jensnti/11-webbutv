@@ -1,4 +1,6 @@
 {
     "tags": "javascript",
+    "layout": "part.njk",
+    "category": "del",
     "permalink": "{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}.html"
 }

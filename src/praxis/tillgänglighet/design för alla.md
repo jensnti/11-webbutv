@@ -1,8 +1,5 @@
 ---
 title: Design för alla
-category: del
-layout: part.njk
-templateOverride: njk, md
 eleventyNavigation:
     key: "design för alla"
     parent: tillgänglighet

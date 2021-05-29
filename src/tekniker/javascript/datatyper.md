@@ -1,8 +1,5 @@
 ---
 title: Datatyper
-category: del
-layout: part.njk
-templateOverride: njk, md
 eleventyNavigation:
     key: datatyper
     parent: javascript
