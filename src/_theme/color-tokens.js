@@ -10,7 +10,7 @@ module.exports = [
        * `color` - Required
        * Any valid CSS color value
        */
-      color: "#BDA2C1",
+      color: "#f3722c",
     //   onColor: "#25282a",
       /*
        * `onColor` - Optional
