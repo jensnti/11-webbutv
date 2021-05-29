@@ -1,4 +1,5 @@
 @import "_vars";
+@import "color-tokens";
 
 p,
 li {
@@ -131,9 +132,25 @@ li {
 }
 
 .bg-theme {
-    background-color: #00af66;
+    background-color: $color-primary;
 }
 
 .color-theme {
-    color: $dark;
+    color: $color-on-primary;
+}
+
+.link-theme {
+    color: $color-on-primary;
+    &:hover {
+        color: shift-color($color-on-primary, $link-shade-percentage);
+    }
+}
+
+.breadcrumb-item {
+    &::before {
+        color: shift-color($color-on-primary, $link-shade-percentage) !important;
+    }
+    &.active {
+        color: shift-color($color-on-primary, $link-shade-percentage) !important;
+    }
 }
