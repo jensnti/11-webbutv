@@ -39,6 +39,10 @@ module.exports = function (eleventyConfig) {
         return `<div class="extra">${content}</div>`;
     });
 
+    eleventyConfig.addPairedShortcode('lead', function (content) {
+        return `<p class="lead">${content}</p>`;
+    });
+
     eleventyConfig.addFilter('splice', (path) => {
         return path.split('/').slice(0, -1).join('/');
     });

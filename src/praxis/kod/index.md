@@ -7,5 +7,6 @@ eleventyNavigation:
     parent: praxis
     order: 1
 ---
-
-Intro kod
+{% lead %}
+Området {{ title }} innehåller följande delar:
+{% endlead %}

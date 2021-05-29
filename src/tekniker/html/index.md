@@ -7,5 +7,6 @@ eleventyNavigation:
     parent: tekniker
     order: 0
 ---
-
-Områdesintro JS
+{% lead %}
+Området {{ title }} innehåller följande delar:
+{% endlead %}
