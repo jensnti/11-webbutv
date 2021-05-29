@@ -6,7 +6,6 @@ eleventyNavigation:
     key: javascript
     parent: tekniker
     order: 2
+    excerpt: 
 ---
-{% lead %}
-Området {{ title }} innehåller följande delar:
-{% endlead %}
+## Området {{ title }} innehåller följande delar

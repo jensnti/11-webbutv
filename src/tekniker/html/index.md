@@ -6,7 +6,6 @@ eleventyNavigation:
     key: html
     parent: tekniker
     order: 0
+    excerpt: Hypertext Markup Language
 ---
-{% lead %}
-Området {{ title }} innehåller följande delar:
-{% endlead %}
+## Området {{ title }} innehåller följande delar

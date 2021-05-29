@@ -4,6 +4,7 @@ eleventyNavigation:
     key: operatorer
     parent: javascript
     order: 2
+    excerpt: För att kunna göra utträkningar behöver vi operatorer
 ---
 {% intro %}
 

@@ -9,6 +9,4 @@ eleventyNavigation:
     order: 0
     excerpt: Tema tekniker
 ---
-{% lead %}
-Temat {{ title }} innehåller följande områden:
-{% endlead %}
+## Temat {{ title }} innehåller följande områden

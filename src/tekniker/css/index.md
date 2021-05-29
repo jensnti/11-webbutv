@@ -6,7 +6,6 @@ eleventyNavigation:
     key: css
     parent: tekniker
     order: 1
+    excerpt: Cascading Style Sheets
 ---
-{% lead %}
-Området {{ title }} innehåller följande delar:
-{% endlead %}
+## Området {{ title }} innehåller följande delar

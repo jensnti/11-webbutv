@@ -9,6 +9,4 @@ eleventyNavigation:
     order: 1
     excerpt: Tema praxis
 ---
-{% lead %}
-Temat {{ title }} innehåller följande områden:
-{% endlead %}
+## Temat {{ title }} innehåller följande områden

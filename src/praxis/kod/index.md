@@ -6,7 +6,6 @@ eleventyNavigation:
     key: kod
     parent: praxis
     order: 1
+    excerpt:
 ---
-{% lead %}
-Området {{ title }} innehåller följande delar:
-{% endlead %}
+## Området {{ title }} innehåller följande delar

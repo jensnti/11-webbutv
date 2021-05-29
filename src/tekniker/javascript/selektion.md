@@ -4,6 +4,7 @@ eleventyNavigation:
     key: selektion
     parent: javascript
     order: 3
+    excerpt:
 ---
 {% intro %}
 
