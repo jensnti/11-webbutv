@@ -6,6 +6,6 @@ eleventyNavigation:
     key: html
     parent: tekniker
     order: 0
+    excerpt: Hypertext Markup Language
 ---
-
-Områdesintro JS
+## Området {{ title }} innehåller följande delar

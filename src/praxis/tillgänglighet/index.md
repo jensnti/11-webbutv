@@ -6,6 +6,6 @@ eleventyNavigation:
     key: tillgänglighet
     parent: praxis
     order: 0
+    excerpt: 
 ---
-
-områdesintro tillgänglighet
+## Området {{ title }} innehåller följande delar

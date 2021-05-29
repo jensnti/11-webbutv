@@ -4,6 +4,7 @@ eleventyNavigation:
     key: variabler
     parent: javascript
     order: 0
+    excerpt: För att spara värden behöver vi variabler
 ---
 {% intro %}
 

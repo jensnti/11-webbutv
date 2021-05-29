@@ -6,6 +6,6 @@ eleventyNavigation:
     key: css
     parent: tekniker
     order: 1
+    excerpt: Cascading Style Sheets
 ---
-
-Områdesintro JS
+## Området {{ title }} innehåller följande delar

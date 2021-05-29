@@ -2,11 +2,10 @@
 title: Javascript
 layout: "area.njk"
 category: område
-templateOverride: njk, md
 eleventyNavigation:
     key: javascript
     parent: tekniker
     order: 2
+    excerpt: 
 ---
-
-## Området Javascript innehåller följande delar 
+## Området {{ title }} innehåller följande delar

@@ -6,6 +6,6 @@ eleventyNavigation:
     key: kod
     parent: praxis
     order: 1
+    excerpt:
 ---
-
-Intro kod
+## Området {{ title }} innehåller följande delar
