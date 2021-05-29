@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ meta.language }}">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ meta.siteDescription }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{ '/css/custom.css' }}">
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
@@ -30,7 +31,9 @@
         </main>
         <footer class="mt-auto py-5">
             <div class="container">
-                <p class="text-muted">Copyright {% year %} Jens Andreasson</p>
+                <p class="text-muted">Kursen och sidans innehåll &copy; {% year %} {{ meta.author.name }}.</p>
+                <p class="text-muted">Sidan är skapad med <a class="text-reset" href="https://www.11ty.dev/">11ty</a> av Jens Andreasson.</p>
+                <p class="text-muted">En mall att bygga från finns på <a class="text-reset" href="https://github.com/jensnti/">GitHub.<a/></p>
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
