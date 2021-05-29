@@ -6,7 +6,7 @@ const slugify = require('slugify');
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 
 module.exports = function (eleventyConfig) {
-    // eleventyConfig.setDataDeepMerge(true);
+    eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(emojiReadTime, {
