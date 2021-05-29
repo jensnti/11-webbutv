@@ -1,4 +1,6 @@
 {
     "tags": "css",
+    "category": "del",
+    "layout": "part.njk",
     "permalink": "{{ page.filePathStem | splice | slugUrl }}/{{ title | slug }}.html"
 }

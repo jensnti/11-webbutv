@@ -10,11 +10,11 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
     {% for entry in navPages %}
-        <li {% if entry.url == page.url %} class="breadcrumb-item active text-capfirst" aria-current="page"{% endif %} class="breadcrumb-item text-capfirst">
+        <li {% if entry.url == page.url %} class="breadcrumb-item active" aria-current="page"{% endif %} class="breadcrumb-item">
             {% if entry.url == page.url %}
                 {{ entry.title | capitalize}}
             {% else %}
-                <a href="{{ entry.url | url }}">{{ entry.title | capitalize}}</a>
+                <a class="link-theme"href="{{ entry.url | url }}">{{ entry.title | capitalize}}</a>
             {% endif %}
         </li>
     {% endfor %}

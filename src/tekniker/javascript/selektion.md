@@ -1,7 +1,5 @@
 ---
 title: Selektion
-category: del
-layout: part.njk
 eleventyNavigation:
     key: selektion
     parent: javascript

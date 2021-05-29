@@ -1,7 +1,5 @@
 ---
 title: Operatorer
-category: del
-layout: part.njk
 eleventyNavigation:
     key: operatorer
     parent: javascript

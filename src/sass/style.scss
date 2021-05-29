@@ -1,4 +1,5 @@
 @import "_vars";
+@import "color-tokens";
 
 p,
 li {
@@ -123,4 +124,33 @@ li {
 .progress {
     // border-radius: 0;
     height: map-get($border-widths , 5);
+}
+
+.stars {
+    font-size: map-get($font-sizes, 4);
+    padding-left: map-get($spacers, 2);
+}
+
+.bg-theme {
+    background-color: $color-primary;
+}
+
+.color-theme {
+    color: $color-on-primary;
+}
+
+.link-theme {
+    color: $color-on-primary;
+    &:hover {
+        color: shift-color($color-on-primary, $link-shade-percentage);
+    }
+}
+
+.breadcrumb-item {
+    &::before {
+        color: shift-color($color-on-primary, $link-shade-percentage) !important;
+    }
+    &.active {
+        color: shift-color($color-on-primary, $link-shade-percentage) !important;
+    }
 }

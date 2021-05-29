@@ -1,8 +1,5 @@
 ---
 title: Variabler
-category: del
-layout: part.njk
-templateOverride: njk, md
 eleventyNavigation:
     key: variabler
     parent: javascript
