@@ -124,3 +124,16 @@ li {
     // border-radius: 0;
     height: map-get($border-widths , 5);
 }
+
+.stars {
+    font-size: map-get($font-sizes, 4);
+    padding-left: map-get($spacers, 2);
+}
+
+.bg-theme {
+    background-color: #00af66;
+}
+
+.color-theme {
+    color: $dark;
+}
