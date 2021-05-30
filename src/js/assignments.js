@@ -1,7 +1,7 @@
 /** look away 💩 **/
 let storage, part, subject, assignmentsElements, extra, area;
 
-const strip = (str) => str.trim().toLowerCase().replace(' ', '');
+const strip = (str) => str.trim().toLowerCase().replace(/ /g, '');
 
 const checkAssignmentExists = (arr, id) => {
     let check = -1;
@@ -106,6 +106,8 @@ window.addEventListener('load', () => {
     assignmentsElements = getAssignments(assignmentsContainer);
 
     storage = JSON.parse(window.localStorage.getItem(subject));
+
+    console.log(title[0], part)
 
     if (storage === null) {
         storage = {

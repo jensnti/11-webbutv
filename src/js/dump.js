@@ -1,4 +1,4 @@
-const strip = (str) => str.trim().toLowerCase().replace(' ', '');
+const strip = (str) => str.trim().toLowerCase().replace(/ /g, '');
 
 window.addEventListener('load', () => {
     const h1 = document.querySelector('h1');
