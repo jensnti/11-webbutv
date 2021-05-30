@@ -3,7 +3,7 @@ title: Datatyper
 eleventyNavigation:
     key: datatyper
     parent: javascript
-    order: 1
+    order: 2
     excerpt: Alla variabler har en datatyp som påverkar hur variabeln fungerar
 ---
 {% intro %}

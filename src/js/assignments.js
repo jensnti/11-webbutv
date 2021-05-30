@@ -107,8 +107,6 @@ window.addEventListener('load', () => {
 
     storage = JSON.parse(window.localStorage.getItem(subject));
 
-    console.log(title[0], part)
-
     if (storage === null) {
         storage = {
             [area]: {
