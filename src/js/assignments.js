@@ -1,3 +1,5 @@
+import confetti from "https://cdn.skypack.dev/canvas-confetti";
+
 /** look away 💩 **/
 let storage, part, subject, assignmentsElements, extra, area;
 
@@ -42,6 +44,9 @@ const createCheckbox = (id, type) => {
     }
 
     input.addEventListener('click', (e) => {
+        if (confetti && input.checked) {
+            confetti();
+        }
         let index = checkAssignmentExists(storage[area][part][type], id);
         if (index === -1) {
             let temp = {
