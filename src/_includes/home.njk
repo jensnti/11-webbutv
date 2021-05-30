@@ -32,7 +32,7 @@ layout: base.njk
                             {% if child.children.length %}
                                 <ul class="list-unstyled">
                                 {% for child in child.children %}
-                                    <li><a  class="accordion-child" href="{{ child.url | url }}">{{ child.title | capitalize }}</a></li>
+                                    <li class="d-flex align-items-center"><a  class="accordion-child" href="{{ child.url | url }}">{{ child.title | capitalize }}</a></li>
                                 {% endfor %}
                                 </ul>
                             {% endif %}
