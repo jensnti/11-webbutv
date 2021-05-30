@@ -11,6 +11,8 @@ const checkAssignmentExists = (arr, id) => {
     return check;
 };
 
+const format = (str) => [str.slice(0, -1), ' ', str.slice(-1)].join('');
+
 const checkAssignmentsStatus = (arr, supposedLength) => {
     let count = 0;
     arr.forEach(element => {
@@ -19,21 +21,28 @@ const checkAssignmentsStatus = (arr, supposedLength) => {
     return supposedLength === count ? true : false;
 };
 
+const createLabel = (text) => {
+    const label = document.createElement('label');
+    label.classList.add('visually-hidden')
+    label.setAttribute('for', text);
+    label.textContent = `Jag är klar med ${format(text)}`;
+    return label;
+}
+
 const createCheckbox = (id, type) => {
-    const element = document.createElement('input');
-    element.type = "checkbox";
-    element.name = id;
-    element.id = id;
+    const input = document.createElement('input');
+    input.type = "checkbox";
+    input.name = id;
+    input.id = id;
 
     let index = checkAssignmentExists(storage[area][part][type], id);
 
     if (index !== -1 && storage[area][part][type][index].completed) {
-        element.checked = true;
+        input.checked = true;
     }
 
-    element.addEventListener('click', (e) => {
+    input.addEventListener('click', (e) => {
         let index = checkAssignmentExists(storage[area][part][type], id);
-
         if (index === -1) {
             let temp = {
                 id: e.target.id,
@@ -57,7 +66,7 @@ const createCheckbox = (id, type) => {
         }
         window.localStorage.setItem(subject, JSON.stringify(storage));
     });
-    return element;
+    return input;
 }
 
 const getAssignments = (container) => {
@@ -145,5 +154,10 @@ window.addEventListener('load', () => {
         element.classList.add('justify-content-between');
         element.classList.add('align-items-center');
         element.appendChild(createCheckbox(strip(element.textContent), 'extra'));
+    });
+
+    const checkBoxElements = document.querySelectorAll('input');
+    checkBoxElements.forEach(el => {
+        el.insertAdjacentElement('beforebegin', createLabel(el.id));
     });
 });
