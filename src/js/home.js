@@ -5,7 +5,7 @@ const checkAssignmentsStatus = (arr, supposedLength = 0) => {
     arr.forEach((element) => {
         if (element.completed === true) count += 1;
     });
-    return supposedLength === count ? true : false;
+    return supposedLength === count && count > 0 ? true : false;
 };
 
 const createProgress = (segments = 0, total = 0) => {
@@ -58,32 +58,26 @@ window.addEventListener('load', () => {
                         storage[area][part].extra,
                         storage[area][part].assignments?.extra
                     );
-                    if (basicCheck) {
-                        total = total + 1;
-                        parts.forEach((element) => {
-                            if (
-                                element.textContent.trim().toLowerCase() ===
-                                part
-                            ) {
-                                element.classList.add('d-flex');
-                                element.classList.add('align-items-center');
-                                // const el = document.createElement('img');
-                                // el.classList.add('ms-2');
-                                // el.src =
-                                //     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23198754' viewBox='0 0 16 16'%3E%3Cpath d='M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z'/%3E%3C/svg%3E";
+                    parts.forEach((element) => {
+                        if (
+                            element.textContent.trim().toLowerCase() ===
+                            part
+                        ) {
+                            if (basicCheck) {
+                                total = total + 1;
                                 const el = document.createElement('span');
                                 el.classList.add('stars');
                                 el.textContent = '⭐';
                                 element.appendChild(el);
-                                if (extraCheck) {
-                                    const el = document.createElement('span');
-                                    el.classList.add('stars');
-                                    el.textContent = '⭐⭐';
-                                    element.appendChild(el);
-                                }
                             }
-                        });
-                    }
+                            if (extraCheck) {
+                                const el = document.createElement('span');
+                                el.classList.add('stars');
+                                el.textContent = '⭐⭐';
+                                element.appendChild(el);
+                            }
+                        }
+                    });
                 }
             }
             themes[themes.length -1].completed = themes[themes.length -1].completed + total;
