@@ -27,7 +27,7 @@ layout: base.njk
                             {{ child.title | capitalize }}
                         </button>
                     </h3>
-                    <div id="{{ child.title }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ child.title }}{{loop.index}}" data-bs-parent="#accordion">
+                    <div id="{{ child.title }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ child.title }}" data-bs-parent="#accordion">
                         <div class="accordion-body">
                             {% if child.children.length %}
                                 <ul class="list-unstyled">
