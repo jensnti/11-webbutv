@@ -1,12 +1,13 @@
 ---
-title: Webbutveckling
+title: Webbutveckling 1
 layout: "home.njk"
 category: ämne
 templateOverride: njk, md
 eleventyNavigation:
-    key: webbutveckling
+    key: webbutveckling 1
 ---
 {% lead %}
 Välkommen till kurssidan för Webbutveckling.
-Nedan hittar du en lista över de teman och områden som kursen innehåller.
+Här hittar du en lista över de teman och områden som kursen innehåller.
 {% endlead %}
+Du kan även se hur långt du har kommit med dina självstudier.

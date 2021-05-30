@@ -1,6 +1,8 @@
+const strip = (str) => str.trim().toLowerCase().replace(' ', '');
+
 window.addEventListener('load', () => {
     const h1 = document.querySelector('h1');
-    const title = h1.textContent.trim().toLowerCase();
+    const title = strip(h1.textContent);
 
 
     let storage = localStorage.getItem(title);
