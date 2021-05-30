@@ -47,6 +47,16 @@ module.exports = function (eleventyConfig) {
         return path.split('/').slice(0, -1).join('/');
     });
 
+    eleventyConfig.addFilter("prev", (arr, currPage) => {
+        const currentIndex = arr.findIndex((page) => page.url === currPage);
+        return arr[currentIndex -1];
+      });
+
+      eleventyConfig.addFilter("next", (arr, currPage) => {
+        const currentIndex = arr.findIndex((page) => page.url === currPage);
+        return arr[currentIndex +1];
+      });
+
     eleventyConfig.addFilter('capitalize ', (str) => {
         return s.charAt(0).toUpperCase() + s.slice(1)
     });

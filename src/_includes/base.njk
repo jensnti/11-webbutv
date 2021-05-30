@@ -15,17 +15,17 @@
     <body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
         <header class="bg-theme color-theme">
             <div class="container pt-3 pb-1">
-             <h1 class="h1 text-nowrap">
-                {% if category %}
-                    {{ category | capitalize }} -
-                {% endif %}
-                 {% if page.fileSlug %}
-                    {{ title }}
-                {% else %}
-                    {{ meta.siteName }}
-                {% endif %}
-            </h1>
-            {% include "breadcrumbs.njk" %}
+                <h1 class="h1 text-nowrap">
+                    {% if category %}
+                        {{ category | capitalize }} -
+                    {% endif %}
+                    {% if page.fileSlug %}
+                        {{ title }}
+                    {% else %}
+                        {{ meta.siteName }}
+                    {% endif %}
+                </h1>
+                {% include "breadcrumbs.njk" %}
             </div>
         </header>
         <main class="container pt-4">
