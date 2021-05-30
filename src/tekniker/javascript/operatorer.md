@@ -3,7 +3,7 @@ title: Operatorer
 eleventyNavigation:
     key: operatorer
     parent: javascript
-    order: 2
+    order: 3
     excerpt: För att kunna göra utträkningar behöver vi operatorer
 ---
 {% intro %}
@@ -24,7 +24,8 @@ operatorer kan vi skapa uttryck.
 
  ## Instruktioner
 Öppna utvecklarverktygen i din webbläsare(F12) och välj console.
-```
+
+```javascript
 12 + 12 // 24
 12 - 2
 12 / 1.2
@@ -41,8 +42,9 @@ let lastName = "efternamn";
 let name = firstName + lastName; // fixa 🤨
 firstName === lastName;
 ```
-Skapa ett nytt html-dokument, koda i ett ```<script>``` element.
-```
+
+Skapa ett nytt HTML dokument, koda i ett ```<script>``` element.
+```javascript
 console.log('Addition');
 let num1 = parseInt(prompt('Skriv ett tal: '));  // parseInt()
 let num2 = ... // Du kan!
@@ -83,6 +85,7 @@ Skapa ett nytt dokument.
 Skapa ett nytt dokument. Koda utträkningar för alla räknesätten.
 Låt användaren mata in värden med ```prompt()```.
 
+#### Uppgift 4
 Skapa en resultatsträng där du kombinerar siffror och strängar.
 Skriv ut resultatsträngen med både ```console.log()``` och ```alert()```.
 
