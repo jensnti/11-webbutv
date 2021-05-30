@@ -1,7 +1,7 @@
 /** look away 💩 **/
 let storage, part, subject, assignmentsElements, extra, area;
 
-const strip = (str) => str.toLowerCase().replace(' ', '');
+const strip = (str) => str.trim().toLowerCase().replace(' ', '');
 
 const checkAssignmentExists = (arr, id) => {
     let check = -1;
@@ -87,10 +87,11 @@ const getAssignments = (container) => {
 
 window.addEventListener('load', () => {
     const title = document.title.split('-');
-    subject = title[1].trim().toLowerCase();
-    part = title[0].trim().toLowerCase();
-    area = document.querySelector('#area').textContent.trim().toLowerCase();
+    subject = strip(title[1]);
+    part = strip(title[0]);
+    area = strip(document.querySelector('#area').textContent);
     const assignmentsContainer = document.querySelector('.assignments')
+    if (!assignmentsContainer) return;
     extra = assignmentsContainer.querySelector('.extra');
 
     assignmentsElements = getAssignments(assignmentsContainer);
@@ -145,6 +146,4 @@ window.addEventListener('load', () => {
         element.classList.add('align-items-center');
         element.appendChild(createCheckbox(strip(element.textContent), 'extra'));
     });
-
-    console.log(storage)
 });

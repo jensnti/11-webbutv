@@ -1,5 +1,7 @@
 let storage;
 
+const strip = (str) => str.trim().toLowerCase().replace(' ', '');
+
 const checkAssignmentsStatus = (arr, supposedLength = 0) => {
     let count = 0;
     arr.forEach((element) => {
@@ -20,7 +22,7 @@ const createProgress = (segments = 0, total = 0) => {
 };
 
 window.addEventListener('load', () => {
-    const subject = document.title.trim().toLowerCase();
+    const subject = strip(document.title);
 
     storage = JSON.parse(window.localStorage.getItem(subject));
 
@@ -40,7 +42,7 @@ window.addEventListener('load', () => {
         }
 
         let h3 = element.querySelector('h3');
-        let area = h3 ? h3.textContent.trim().toLowerCase() : false;
+        let area = h3 ? strip(h3.textContent) : false;
         if (area) {
             const container = document.querySelector(`#${area}`);
             const parts = container.querySelectorAll('li');
@@ -60,7 +62,7 @@ window.addEventListener('load', () => {
                     );
                     parts.forEach((element) => {
                         if (
-                            element.textContent.trim().toLowerCase() ===
+                            strip(element.textContent) ===
                             part
                         ) {
                             if (basicCheck) {
