@@ -23,12 +23,7 @@
                         {{ meta.siteName }}
                     {% endif %}
                 </h1>
-                <div class="d-flex justify-content-between">
-                    {% include "breadcrumbs.njk" %}
-                    {% if category == 'del' %}
-                        {% include "prevnext.njk" %}
-                    {% endif %}
-                </div>
+                {% include "breadcrumbs.njk" %}
             </div>
         </header>
         <main class="container pt-4">
