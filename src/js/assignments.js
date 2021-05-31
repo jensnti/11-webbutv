@@ -1,5 +1,3 @@
-import confetti from "https://cdn.skypack.dev/canvas-confetti";
-
 /** look away 💩 **/
 let storage, part, subject, assignmentsElements, extra, area;
 
