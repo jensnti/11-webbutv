@@ -4,6 +4,7 @@ module.exports = {
     url: process.env.URL || 'http://localhost:8080',
     language: 'sv',
     siteName: 'Webbutveckling 1',
+    themeColor: '#f3722c',
     siteDescription:
         'Kurssida för webbutveckling. HTML, CSS, javascript, tillgänglighet',
     author: {

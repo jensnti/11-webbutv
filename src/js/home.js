@@ -15,6 +15,7 @@ const createProgress = (segments = 0, total = 0) => {
     progress.classList.add('progress');
     const bar = document.createElement('div');
     bar.classList.add('progress-bar');
+    // bar.classList.add('progress-bar-striped');
     bar.classList.add('bg-theme');
     bar.setAttribute('style', `width: ${segments * total}%`);
     progress.appendChild(bar);
