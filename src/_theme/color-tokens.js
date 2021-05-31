@@ -1,4 +1,6 @@
 // Example color-tokens.js
+const meta = require('../_data/meta');
+
 module.exports = [
     {
       /*
@@ -10,7 +12,7 @@ module.exports = [
        * `color` - Required
        * Any valid CSS color value
        */
-      color: "#f3722c",
+      color: meta.themeColor,
     //   onColor: "#25282a",
       /*
        * `onColor` - Optional
