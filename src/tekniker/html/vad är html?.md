@@ -11,8 +11,7 @@ eleventyNavigation:
 
 ## Introduktion
 Hypertext Markup Language(HTML) är ett märkspråk som används för att märka upp webbsidor.
-HTML ger strukturen och betydelsen så att en webbläsare kan tolka webbsidan och rita den.
-
+HTML strukturerar upp text och ger texten semantisk betydelse med hjälp av taggar. Det för att en webbläsare ska kunna tolka texten och visa den som en webbsida.
 
 HTML är en standard som styrs av [World Wide Web Consortium](https://www.w3.org/).
 
