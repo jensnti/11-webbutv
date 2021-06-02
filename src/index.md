@@ -2,7 +2,6 @@
 title: Webbutveckling 1
 layout: "home.njk"
 category: ämne
-templateOverride: njk, md
 eleventyNavigation:
     key: webbutveckling 1
 ---
