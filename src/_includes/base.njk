@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{{ meta.siteDescription }}">
         <meta name="theme-color" content="{{ meta.themeColor }}">
-        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+        <link rel='icon' type='image/x-icon' href='/favicon.ico'/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
@@ -26,7 +26,7 @@
     <body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
         <header class="bg-theme color-theme">
             <div class="container pt-3 pb-1">
-                <h1 class="h1 text-nowrap">
+                <h1 class="text-nowrap text-uppercase">
                     {% if category %}
                         {{ category | capitalize }} -
                     {% endif %}
@@ -46,9 +46,7 @@
             <div class="container">
                 <p class="text-muted">Kursen och sidans innehåll &copy; {% year %}
                     {{ meta.author.name }}.</p>
-                <p class="text-muted">Sidan är skapad med
-                    <a class="text-reset" href="https://www.11ty.dev/">11ty</a>
-                    av Jens Andreasson utifrån Kaj Schmidts pedagogiska funderingar.</p>
+                <p class="text-muted">Sidan är skapad av Jens Andreasson utifrån Kaj Schmidts pedagogiska funderingar.</p>
                 <p class="text-muted">En mall att bygga från finns på
                     <a class="text-reset" href="https://github.com/jensnti/">GitHub.</a>
                 </p>

@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(emojiReadTime, {
         emoji: '📕',
         label: "minuters läsning",
-        wpm: 200,
+        wpm: 160,
         bucketSize: 3,
       });
 
@@ -24,6 +24,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/favicon.ico');
 
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+    eleventyConfig.addShortcode("youtube", (code) => {
+        return `<div class="video-wrapper"><iframe 
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/${code}"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen></iframe></div>`;
+    });
 
     eleventyConfig.addPairedShortcode('intro', function (content) {
         return `<section class="col-md-3 intro">${content}</section>`;

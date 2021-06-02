@@ -11,7 +11,7 @@ eleventyNavigation:
 ## Introduktion
 Att skriva korrekt och felfri kod är viktigt av flera anledningar. Först och främst
 så påverkar det sidans funktion, men det har även positiva effekter på användbarheten.
-Förhoppningsvis så gör det även så att din sida fortsätter fungera väl i framtiden också.
+Det är även en bra väg mot att framtidssäkra din webbplats.
 
 HTML och CSS valideras främst med automatiska verktyg.
 
